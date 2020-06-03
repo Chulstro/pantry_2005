@@ -4,6 +4,7 @@ class CookBook
 
   def initialize
     @recipes = []
+    @time = Time.now
   end
 
   def add_recipe(recipe)
@@ -24,5 +25,9 @@ class CookBook
     @recipes.max_by do |recipe|
       recipe.total_calories
     end
+  end
+
+  def date
+    @time.strftime("%m-%d-%Y")
   end
 end
